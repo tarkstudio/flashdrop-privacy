@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — FlashDrop</title>
+  <style>
+    /* ========================================================
+       Copyright (c) 2026 FlashDrop Project — Brijesh.
+       All rights reserved.
+    ======================================================== */
+    :root {
+      --accent:   #0066ff;
+      --accent-dk:#0044cc;
+      --bg:       #0d0d0d;
+      --surface:  #141414;
+      --card:     #1a1a1a;
+      --border:   #2a2a2a;
+      --text:     #e8e8e8;
+      --muted:    #888;
+      --warn-bg:  #1a0e00;
+      --warn-bdr: #ff6600;
+      --warn-txt: #ffaa44;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── TOP BANNER ─────────────────────────────────────── */
+    .top-bar {
+      background: linear-gradient(135deg, #000 0%, #001233 100%);
+      border-bottom: 1px solid var(--accent);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 34px; height: 34px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900; color: #fff;
+    }
+    .logo-text { font-size: 1.1rem; font-weight: 700; color: #fff; letter-spacing: .5px; }
+    .logo-text span { color: var(--accent); }
+    .badge {
+      margin-left: auto;
+      background: rgba(0,102,255,.15);
+      border: 1px solid rgba(0,102,255,.4);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+
+    /* ── LAYOUT ──────────────────────────────────────────── */
+    .layout { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px; }
+
+    /* ── SIDEBAR / TOC ───────────────────────────────────── */
+    .toc {
+      width: 260px; flex-shrink: 0;
+      position: sticky; top: 24px; align-self: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+    .toc h3 {
+      font-size: .7rem; font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1.2px; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .toc a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .82rem;
+      padding: 5px 8px;
+      border-radius: 6px;
+      transition: all .15s;
+      border-left: 2px solid transparent;
+    }
+    .toc a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.05);
+      border-left-color: var(--accent);
+    }
+    .toc-num { color: var(--accent); font-weight: 700; margin-right: 4px; font-size: .75rem; }
+
+    /* ── MAIN CONTENT ────────────────────────────────────── */
+    .content { flex: 1; min-width: 0; }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #001233 0%, #000820 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 40px 32px;
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-size: 2rem; font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+    .meta-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px; margin-top: 24px;
+    }
+    .meta-item {
+      background: rgba(0,0,0,.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .meta-item .label { font-size: .65rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .8px; }
+    .meta-item .value { font-size: .85rem; color: var(--text); margin-top: 2px; }
+
+    /* ── WARNING BOX ─────────────────────────────────────── */
+    .warning-box {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-bdr);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 32px;
+    }
+    .warning-box .w-title {
+      font-size: .8rem; font-weight: 800;
+      color: var(--warn-txt);
+      letter-spacing: .8px; text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .warning-box p { font-size: .88rem; color: #cc8833; line-height: 1.6; }
+
+    /* ── SECTION ─────────────────────────────────────────── */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      transition: border-color .2s;
+    }
+    .section:hover { border-color: rgba(0,102,255,.3); }
+
+    .section-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      background: var(--accent);
+      color: #fff;
+      font-size: .75rem; font-weight: 800;
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section h2 { font-size: 1.15rem; font-weight: 700; color: #fff; }
+
+    h3 { font-size: .95rem; font-weight: 700; color: var(--accent); margin: 20px 0 10px; }
+
+    p { margin-bottom: 12px; font-size: .9rem; color: #ccc; }
+
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { font-size: .88rem; color: #ccc; margin-bottom: 6px; line-height: 1.6; }
+
+    /* ── DISCLAIMER CALLOUT ──────────────────────────────── */
+    .disclaimer-box {
+      background: rgba(0,102,255,.08);
+      border: 1px solid rgba(0,102,255,.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .disclaimer-box p {
+      font-size: .85rem;
+      color: #8aabff;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: .4px;
+      margin: 0;
+    }
+
+    /* ── TABLE ───────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    th {
+      background: rgba(0,102,255,.15);
+      color: var(--accent);
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .6px;
+      padding: 10px 14px; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #ccc;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,.02); }
+    .no-tag {
+      display: inline-block;
+      background: rgba(255,50,50,.15);
+      border: 1px solid rgba(255,50,50,.3);
+      color: #ff6666;
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-size: .75rem; font-weight: 700;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .footer {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 36px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .footer p { font-size: .82rem; color: var(--muted); margin-bottom: 6px; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .layout { flex-direction: column; }
+      .toc { position: static; width: 100%; max-height: 300px; }
+      .hero h1 { font-size: 1.5rem; }
+      .section { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="logo-icon">F</div>
+  <span class="logo-text">Flash<span>Drop</span></span>
+  <span class="badge">Legal Document</span>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR TOC -->
+  <nav class="toc">
+    <h3>Contents</h3>
+    <a href="#s1"><span class="toc-num">01</span> Agreement to Terms</a>
+    <a href="#s2"><span class="toc-num">02</span> Nature of the Application</a>
+    <a href="#s3"><span class="toc-num">03</span> Disclaimer of Warranties</a>
+    <a href="#s4"><span class="toc-num">04</span> Limitation of Liability</a>
+    <a href="#s5"><span class="toc-num">05</span> User Responsibilities</a>
+    <a href="#s6"><span class="toc-num">06</span> Prohibited Uses</a>
+    <a href="#s7"><span class="toc-num">07</span> Modifications</a>
+    <a href="#s8"><span class="toc-num">08</span> Intellectual Property</a>
+    <a href="#s9"><span class="toc-num">09</span> Open-Source Components</a>
+    <a href="#s10"><span class="toc-num">10</span> Indemnification</a>
+    <a href="#s11"><span class="toc-num">11</span> Governing Law</a>
+    <a href="#s12"><span class="toc-num">12</span> Severability</a>
+    <a href="#s13"><span class="toc-num">13</span> Entire Agreement</a>
+    <a href="#s14"><span class="toc-num">14</span> Contact</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <h1>Terms of <span>Service</span></h1>
+      <p>FlashDrop — High-Speed Local P2P File Transfer Utility</p>
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="label">Effective Date</div>
+          <div class="value">September 25, 2026</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Last Updated</div>
+          <div class="value">September 25, 2026</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Developer</div>
+          <div class="value">Brijesh</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Contact</div>
+          <div class="value"><a href="mailto:your-email@example.com" style="color:var(--accent)">your-email@example.com</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WARNING -->
+    <div class="warning-box">
+      <div class="w-title">⚠ Important Notice</div>
+      <p>By downloading, installing, or using FlashDrop, you agree to these Terms in full. If you do not agree, you must immediately uninstall the Application. Use of the Application constitutes irrevocable acceptance.</p>
+    </div>
+
+    <!-- § 1 -->
+    <div class="section" id="s1">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <h2>Agreement to Terms</h2>
+      </div>
+      <p>By downloading, installing, launching, or using FlashDrop (the "Application"), you ("User") unconditionally agree to be bound by these Terms of Service ("Terms"). If you do not agree with any part of these Terms, <strong>you must immediately cease use of the Application and uninstall it from your device.</strong></p>
+      <p>These Terms constitute a legally binding agreement between you and the developer of FlashDrop ("Developer," "we," "us," or "our"). The Developer reserves all rights not expressly granted herein.</p>
+    </div>
+
+    <!-- § 2 -->
+    <div class="section" id="s2">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <h2>Nature of the Application</h2>
+      </div>
+      <p>FlashDrop is an <strong>experimental, offline peer-to-peer (P2P) local networking and high-speed file transfer utility</strong> designed to operate exclusively over local area networks (LAN), Wi-Fi Direct, device hotspots, and similar proximity-based wireless environments. The Application:</p>
+      <ul>
+        <li>Operates <strong>entirely locally</strong> without routing any data through external servers or cloud infrastructure.</li>
+        <li>Is offered as a <strong>utility tool</strong> for personal and non-commercial file transfers.</li>
+        <li>Employs experimental technologies including zero-copy DMA streaming, Turbo channels, and Web sharing interfaces — features that are inherently developmental in nature.</li>
+        <li>Is <strong>provided "AS-IS" and "AS-AVAILABLE"</strong> at all times, with no guaranteed uptime, completion rate, or error-free performance.</li>
+      </ul>
+      <p>The Developer expressly acknowledges and discloses that FlashDrop is not production-grade enterprise software and makes no claims of stability, reliability, or fitness for any particular purpose.</p>
+    </div>
+
+    <!-- § 3 -->
+    <div class="section" id="s3">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <h2>Disclaimer of Warranties</h2>
+      </div>
+      <div class="disclaimer-box">
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APPLICATION IS PROVIDED STRICTLY "AS-IS" AND "AS-AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE.</p>
+      </div>
+      <p>The Developer explicitly disclaims all warranties including, but not limited to:</p>
+      <ul>
+        <li><strong>No Warranty of Performance:</strong> The Developer makes no representation that transfers will complete, that transfer speeds will meet any benchmark, or that the Application will operate without errors, interruptions, or crashes.</li>
+        <li><strong>No Warranty of Fitness:</strong> The Application is not warranted to be fit for any specific purpose, commercial use, or critical data migration scenario.</li>
+        <li><strong>No Warranty of Merchantability:</strong> No implied warranty of merchantability is offered or applicable.</li>
+        <li><strong>No Warranty of Non-Infringement:</strong> The Developer does not warrant that the Application is free from third-party intellectual property conflicts arising from User-transmitted content.</li>
+        <li><strong>No Warranty Against Data Loss:</strong> The Developer expressly disclaims any guarantee against file corruption, incomplete transfers, data loss, or metadata stripping during transmission.</li>
+        <li><strong>No Warranty of Hardware Compatibility:</strong> The Developer does not warrant compatibility with any specific device, Android version, Wi-Fi chipset, USB controller, Bluetooth adapter, or operating system build.</li>
+      </ul>
+      <p style="font-size:.8rem;color:var(--muted);">Some jurisdictions do not allow the exclusion of implied warranties. In such jurisdictions, the above exclusions apply to the fullest extent permitted by law.</p>
+    </div>
+
+    <!-- § 4 -->
+    <div class="section" id="s4">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <div class="disclaimer-box">
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER SHALL NOT BE LIABLE — UNDER ANY LEGAL THEORY — FOR ANY LOSS OR DAMAGE OF ANY KIND, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE, ARISING OUT OF OR IN ANY WAY RELATED TO YOUR USE OF OR INABILITY TO USE THE APPLICATION.</p>
+      </div>
+      <h3>4.1 Data and File Integrity</h3>
+      <ul>
+        <li>Loss, corruption, fragmentation, or incomplete transfer of any file — regardless of file type, size, or value.</li>
+        <li>Metadata loss (EXIF data, timestamps, geolocation tags, document properties).</li>
+        <li>File system errors triggered or revealed during read/write operations initiated by the Application.</li>
+      </ul>
+      <h3>4.2 Hardware and Device Effects</h3>
+      <ul>
+        <li>Device overheating resulting from sustained high-throughput wireless operations.</li>
+        <li>Accelerated battery drain caused by sustained Wi-Fi or hotspot activity.</li>
+        <li>Wi-Fi chipset performance degradation, driver conflicts, or antenna saturation.</li>
+        <li>USB controller throttling or thermal rollback during wired-assisted transfers.</li>
+      </ul>
+      <h3>4.3 Network and Connectivity Issues</h3>
+      <ul>
+        <li>Dropped connections, transfer timeouts, socket errors, or port conflicts arising from the local network environment.</li>
+        <li>Interference from third-party devices, routers, access points, or network equipment.</li>
+        <li>Performance limitations attributable to router firmware or channel congestion.</li>
+      </ul>
+      <h3>4.4 Actions of Third Parties</h3>
+      <ul>
+        <li>Any actions performed by other devices or users connected to the same local network, hotspot, or Wi-Fi Direct session.</li>
+        <li>Unauthorized connections by unknown third-party devices on open or shared Wi-Fi networks.</li>
+        <li>Conduct of receiving peers that contravenes these Terms or applicable law.</li>
+      </ul>
+      <p style="margin-top:16px;font-size:.82rem;font-weight:700;color:var(--warn-txt);background:var(--warn-bg);border:1px solid var(--warn-bdr);padding:12px 16px;border-radius:8px;">IN NO EVENT SHALL THE DEVELOPER'S AGGREGATE LIABILITY EXCEED THE AMOUNT YOU PAID FOR THE APPLICATION IN THE PRECEDING 12 MONTHS, OR USD $1.00 IF OBTAINED FREE OF CHARGE.</p>
+    </div>
+
+    <!-- § 5 -->
+    <div class="section" id="s5">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <h2>User Responsibilities</h2>
+      </div>
+      <p>You acknowledge and agree that you bear <strong>sole and complete responsibility</strong> for:</p>
+      <h3>5.1 Pre-Transfer Verification</h3>
+      <ul>
+        <li>Creating independent backups of all critical, irreplaceable, or sensitive files before initiating any transfer.</li>
+        <li>Verifying the integrity, completeness, and accuracy of all received files after each transfer session.</li>
+        <li>Running independent checksum or hash verification on received files when file integrity is critical.</li>
+      </ul>
+      <h3>5.2 Content Responsibility</h3>
+      <ul>
+        <li>You are entirely responsible for all content you send, receive, or make available through FlashDrop.</li>
+        <li>The Developer does <strong>not</strong> inspect, monitor, intercept, log, or control any transmitted data.</li>
+        <li>Transmission of illegal, copyrighted, or malicious content is <strong>solely your personal liability.</strong></li>
+      </ul>
+      <h3>5.3 Network Environment</h3>
+      <ul>
+        <li>You are responsible for the security of your own network environment, including hotspot password strength and connected-device management.</li>
+        <li>Use on open, unencrypted, or public Wi-Fi networks is undertaken <strong>entirely at your own risk.</strong></li>
+      </ul>
+    </div>
+
+    <!-- § 6 -->
+    <div class="section" id="s6">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <h2>Prohibited Uses</h2>
+      </div>
+      <p>You agree <strong>not</strong> to use the Application, directly or indirectly, to:</p>
+      <ol>
+        <li>Transmit files containing malware, viruses, or other malicious code.</li>
+        <li>Violate any applicable local, state, national, or international law or regulation.</li>
+        <li>Infringe upon the intellectual property, privacy, or proprietary rights of any person or entity.</li>
+        <li>Harass, threaten, stalk, or harm any individual.</li>
+        <li>Circumvent, disable, or interfere with any security or access control features of the Application.</li>
+        <li>Reverse-engineer, decompile, or disassemble the Application except where expressly permitted by law.</li>
+        <li>Use the Application as part of any commercial product or service without express written authorization.</li>
+        <li>Exploit the Application to gain unauthorized access to third-party systems or devices.</li>
+      </ol>
+    </div>
+
+    <!-- § 7 -->
+    <div class="section" id="s7">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <h2>Modifications to the Application and Terms</h2>
+      </div>
+      <p>The Developer reserves the <strong>unrestricted right</strong>, at any time and without prior notice or liability, to:</p>
+      <ul>
+        <li>Modify, patch, update, or alter any feature, function, interface, or behavior — including Turbo channels, Web sharing, socket modes, or QR pairing.</li>
+        <li>Suspend, restrict, or permanently discontinue the Application or any specific feature.</li>
+        <li>Amend, revise, or replace these Terms at any time by posting updated Terms within the Application or associated repositories.</li>
+      </ul>
+      <p><strong>Your continued use of the Application following any modification constitutes irrevocable acceptance of the revised Terms.</strong></p>
+    </div>
+
+    <!-- § 8 -->
+    <div class="section" id="s8">
+      <div class="section-header">
+        <div class="section-num">08</div>
+        <h2>Intellectual Property</h2>
+      </div>
+      <p>All software code, interface design, graphics, documentation, and associated materials are the exclusive intellectual property of the Developer and are protected under applicable copyright, patent, and trade secret laws. You are granted a <strong>limited, non-exclusive, non-transferable, revocable license</strong> to install and use the Application on devices you own or control, solely for personal, non-commercial purposes.</p>
+    </div>
+
+    <!-- § 9 -->
+    <div class="section" id="s9">
+      <div class="section-header">
+        <div class="section-num">09</div>
+        <h2>Open-Source Components</h2>
+      </div>
+      <p>The Application may incorporate open-source software components subject to their own respective licenses. The inclusion of open-source components does not grant you any rights to the Developer's proprietary code or affect the disclaimers and liability limitations set forth herein.</p>
+    </div>
+
+    <!-- § 10 -->
+    <div class="section" id="s10">
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <h2>Indemnification</h2>
+      </div>
+      <p>You agree to <strong>indemnify, defend, and hold harmless</strong> the Developer and any associated contributors from and against any and all claims, demands, damages, losses, costs, expenses (including reasonable legal fees), and liabilities arising out of or related to:</p>
+      <ul>
+        <li>Your use or misuse of the Application.</li>
+        <li>Content you transmit, receive, or store through the Application.</li>
+        <li>Your violation of these Terms or any applicable law.</li>
+        <li>Your infringement of any third-party right.</li>
+      </ul>
+    </div>
+
+    <!-- § 11 -->
+    <div class="section" id="s11">
+      <div class="section-header">
+        <div class="section-num">11</div>
+        <h2>Governing Law and Dispute Resolution</h2>
+      </div>
+      <p>These Terms shall be governed by and construed in accordance with the laws of <strong>India</strong>, without regard to its conflict-of-law principles. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts located in India.</p>
+    </div>
+
+    <!-- § 12 -->
+    <div class="section" id="s12">
+      <div class="section-header">
+        <div class="section-num">12</div>
+        <h2>Severability</h2>
+      </div>
+      <p>If any provision of these Terms is found to be unlawful, void, or unenforceable, such provision shall be modified to the minimum extent necessary to make it enforceable. The remaining provisions shall continue in full force and effect.</p>
+    </div>
+
+    <!-- § 13 -->
+    <div class="section" id="s13">
+      <div class="section-header">
+        <div class="section-num">13</div>
+        <h2>Entire Agreement</h2>
+      </div>
+      <p>These Terms, together with the Privacy Policy incorporated herein by reference, constitute the <strong>entire agreement</strong> between you and the Developer with respect to the Application and supersede all prior negotiations, understandings, or agreements relating to the subject matter hereof.</p>
+    </div>
+
+    <!-- § 14 -->
+    <div class="section" id="s14">
+      <div class="section-header">
+        <div class="section-num">14</div>
+        <h2>Contact Information</h2>
+      </div>
+      <p>For questions, legal notices, or concerns regarding these Terms, please contact:</p>
+      <ul>
+        <li><strong>Developer:</strong> Brijesh</li>
+        <li><strong>Project:</strong> FlashDrop</li>
+        <li><strong>Email:</strong> <a href="mailto:your-email@example.com" style="color:var(--accent)">your-email@example.com</a></li>
+        <li><strong>Repository / Support:</strong> <a href="#" style="color:var(--accent)">[your-github-or-website-url]</a></li>
+      </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>© 2026 FlashDrop Project — Brijesh. All rights reserved.</p>
+      <p>These Terms were last reviewed and updated on September 25, 2026.</p>
+      <p style="margin-top:10px;">
+        <a href="TERMS_OF_SERVICE.html">Terms of Service</a> &nbsp;·&nbsp;
+        <a href="PRIVACY_POLICY.html">Privacy Policy</a>
+      </p>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal & Privacy - FlashDrop</title>
+  <style>
+    :root {
+      --accent: #00F0FF;
+      --accent-hover: #00E676;
+      --bg: #070A0F;
+      --surface: #0F1722;
+      --card: #131D2E;
+      --border: #1E2D44;
+      --text: #E6F1FF;
+      --text-muted: #88A0C0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .tab-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+    .tab-btn.active {
+      background: rgba(0, 240, 255, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    }
+    .content-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Markdown Styles */
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+      color: var(--accent);
+      margin-top: 30px;
+    }
+    .markdown-body h1 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .markdown-body p { margin-bottom: 16px; color: var(--text); }
+    .markdown-body a { color: var(--accent-hover); text-decoration: none; }
+    .markdown-body a:hover { text-decoration: underline; }
+    .markdown-body ul, .markdown-body ol { margin-bottom: 16px; padding-left: 20px; }
+    .markdown-body li { margin-bottom: 8px; }
+    .markdown-body code {
+      background: var(--card);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    .markdown-body strong { color: #fff; }
+    .markdown-body blockquote {
+      border-left: 4px solid var(--accent);
+      margin: 0;
+      padding-left: 16px;
+      color: var(--text-muted);
+      background: var(--card);
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+    .markdown-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 30px 0;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>FlashDrop Legal & Privacy</h1>
+  </div>
+  
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('tos')">Terms of Service</button>
+    <button class="tab-btn" onclick="switchTab('privacy')">Privacy Policy</button>
+  </div>
+
+  <div class="content-container">
+    <div id="tos-content" class="tab-content active markdown-body"></div>
+    <div id="privacy-content" class="tab-content markdown-body"></div>
+  </div>
+
+  <script>
+    const tosMarkdown = \$tosEscaped\;
+    const privacyMarkdown = \$privEscaped\;
+
+    document.getElementById('tos-content').innerHTML = marked.parse(tosMarkdown);
+    document.getElementById('privacy-content').innerHTML = marked.parse(privacyMarkdown);
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
+      if (tabId === 'tos') {
+        document.getElementById('tos-content').classList.add('active');
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+      } else {
+        document.getElementById('privacy-content').classList.add('active');
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
