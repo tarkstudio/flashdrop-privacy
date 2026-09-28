@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlashDrop — Privacy Policy & Terms of Service</title>
+<meta name="description" content="Privacy Policy and Terms of Service for FlashDrop, an offline peer-to-peer file transfer app.">
+<style>
+:root{--bg:#f2f4f8;--card:#fff;--ink:#16213a;--muted:#5a6580;--line:#dde2ec;--accent:#e8890c;--accent-ink:#fff;--soft:#fdf3e3;--code:#eef1f7}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1424;--card:#151d33;--ink:#e8ecf5;--muted:#9aa5c0;--line:#27314d;--accent:#f5a233;--accent-ink:#14100a;--soft:#2a2113;--code:#1d2743}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:88px}
+header{background:var(--card);border-bottom:1px solid var(--line)}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.brand{display:flex;align-items:center;gap:12px;padding:22px 0 8px}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{font-size:1.25rem;letter-spacing:.2px}
+.meta{color:var(--muted);font-size:.9rem;padding-bottom:20px}
+main{padding:28px 0 24px}
+article{display:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:32px 36px}
+article.active{display:block}
+h1{font-size:1.9rem;line-height:1.25;margin:0 0 6px}
+h2{font-size:1.2rem;margin:34px 0 8px;padding-top:6px}
+h3{font-size:1rem;margin:20px 0 4px}
+p{margin:8px 0}
+ul,ol{padding-left:22px;margin:8px 0}
+li{margin:4px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.lead{color:var(--muted);margin-bottom:18px}
+.note{background:var(--soft);border-left:4px solid var(--accent);border-radius:6px;padding:10px 14px;margin:14px 0}
+.caps{font-size:.9rem;letter-spacing:.1px}
+code{background:var(--code);padding:1px 6px;border-radius:4px;font:0.86em ui-monospace,Menlo,Consolas,monospace}
+.tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--code)}
+tr:last-child td{border-bottom:0}
+.foot{color:var(--muted);font-size:.85rem;margin-top:26px}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));z-index:10}
+nav .in{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--code);padding:5px;border-radius:12px}
+nav button{font:inherit;font-weight:600;border:0;border-radius:8px;padding:11px 8px;background:transparent;color:var(--muted);cursor:pointer;transition:background .15s,color .15s}
+nav button[aria-selected=true]{background:var(--accent);color:var(--accent-ink)}
+nav button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+@media(max-width:600px){article{padding:22px 18px}h1{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand">
+<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#e8890c"/><path d="M22 6 11 23h8l-2 11 12-18h-8z" fill="#fff"/></svg>
+<b>FlashDrop</b></div>
+<div class="meta">High-speed local P2P file transfer · Effective September 25, 2026</div>
+</div></header>
+
+<main class="wrap">
+
+<!-- ================= PRIVACY ================= -->
+<article id="privacy" class="active" aria-labelledby="t-privacy">
+<h1 id="t-privacy">Privacy Policy</h1>
+<p class="lead">Effective and last updated September 25, 2026 · Developer: Brijesh (FlashDrop Project) · <a href="mailto:gyancom360@gmail.com">gyancom360@gmail.com</a></p>
+
+<h2>1. Introduction and Commitment</h2>
+<p>FlashDrop ("Application," "we," "us," or "our") is committed to transparency regarding information practices. This Privacy Policy explains in precise technical detail what information the Application accesses, how it is used, and how it is protected — or, as is predominantly the case, <strong>why no information leaves your device at all.</strong></p>
+<p>This policy is designed to comply with the <strong>Google Play Store Developer Program Policies</strong>, the <strong>Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011</strong> (India), and international best-practice standards including principles of GDPR and CCPA where applicable by our choice of good practice.</p>
+<p>By installing or using the Application, you acknowledge that you have read, understood, and agreed to this Privacy Policy.</p>
+
+<h2>2. Architecture Overview: Offline-First, Zero-Server Design</h2>
+<p>FlashDrop operates on a <strong>purely offline peer-to-peer (P2P) architecture.</strong> This is a foundational design principle, not merely a configuration choice.</p>
+<h3>2.1 What This Means for Your Data</h3>
+<ul>
+<li><strong>No remote servers:</strong> FlashDrop does not operate, own, lease, or use any backend servers, cloud APIs, or data centers to route, store, or process your files.</li>
+<li><strong>No data uploads:</strong> At no point does the Application transmit your files, file names, file metadata, usage patterns, analytics events, device identifiers, or any other information to the Developer or to any third-party remote service.</li>
+<li><strong>No accounts required:</strong> FlashDrop requires no user registration, account creation, or identity verification. No username, password, email address, or personal identifier is collected by the Developer.</li>
+<li><strong>Local socket only:</strong> All file transfers occur directly between two devices on the same local network segment via raw TCP/UDP sockets, Wi-Fi Direct protocols, or local hotspot streams. Data never traverses the public internet.</li>
+</ul>
+<h3>2.2 Peer-to-Peer Transfer Model</h3>
+<p>When you transfer a file using FlashDrop:</p>
+<ol>
+<li>Your device opens a <strong>local socket</strong> (e.g., on <code>192.168.x.x</code> or a link-local address) and advertises availability within the local network only.</li>
+<li>A receiving device discovers this socket via <strong>mDNS/Bonjour broadcast, QR code scan, or manual IP entry</strong> — all local operations.</li>
+<li>The file is streamed directly from the sending device's local storage to the receiving device's local storage via the established socket.</li>
+<li><strong>The Developer's systems are never involved.</strong> No data is routed through us at any stage.</li>
+</ol>
+
+<h2>3. Permissions Used and Their Justification</h2>
+<p>The Application requests certain Android system permissions. Each permission is used solely for the technical operation of local file transfers. The Developer makes the following binding representations:</p>
+<div class="tw"><table>
+<thead><tr><th>Permission</th><th>Purpose</th><th>Remote telemetry?</th></tr></thead>
+<tbody>
+<tr><td><code>READ_EXTERNAL_STORAGE</code> / <code>READ_MEDIA_*</code></td><td>Read files selected by the user for outbound transfer</td><td>Never</td></tr>
+<tr><td><code>WRITE_EXTERNAL_STORAGE</code></td><td>Write incoming files to the device's storage</td><td>Never</td></tr>
+<tr><td><code>ACCESS_WIFI_STATE</code> / <code>CHANGE_WIFI_STATE</code></td><td>Detect active network interfaces for socket binding</td><td>Never</td></tr>
+<tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Check local network connectivity before initiating streams</td><td>Never</td></tr>
+<tr><td><code>CHANGE_NETWORK_STATE</code></td><td>Configure local hotspot or Wi-Fi Direct connections</td><td>Never</td></tr>
+<tr><td><code>NEARBY_WIFI_DEVICES</code></td><td>Discover peer devices for Wi-Fi Direct pairing (Android 12+)</td><td>Never</td></tr>
+<tr><td><code>ACCESS_FINE_LOCATION</code> / <code>ACCESS_COARSE_LOCATION</code></td><td>Required by Android OS for Wi-Fi scanning APIs (no location data is stored or transmitted)</td><td>Never</td></tr>
+<tr><td><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_DATA_SYNC</code></td><td>Keep transfer socket alive during background/screen-off scenarios</td><td>Never</td></tr>
+<tr><td><code>CAMERA</code> (optional)</td><td>Scan QR codes for peer discovery; no images are stored</td><td>Never</td></tr>
+<tr><td><code>POST_NOTIFICATIONS</code></td><td>Display transfer progress notifications</td><td>Never</td></tr>
+</tbody></table></div>
+<p><strong>No permission is used for telemetry, behavioral tracking, advertising profiling, or any purpose other than enabling local P2P file transfer.</strong></p>
+<h3>3.1 Location Permission Clarification</h3>
+<p>Android's Wi-Fi scanning API (<code>WifiManager.startScan()</code>, <code>WifiP2pManager</code>) mandates the <code>ACCESS_FINE_LOCATION</code> permission at the operating system level. <strong>FlashDrop does not read, record, process, or transmit your geographic location.</strong> This permission is an OS-enforced prerequisite for Wi-Fi Direct peer discovery and is used for no other purpose whatsoever.</p>
+
+<h2>4. Information We Do NOT Collect</h2>
+<p>To eliminate any ambiguity, the following is an explicit enumeration of data <strong>that the Developer does NOT collect under any circumstances in the current version of the Application:</strong></p>
+<ul>
+<li>Your name, email address, phone number, or any personally identifiable information.</li>
+<li>Your files, file names, file types, file sizes, or file metadata.</li>
+<li>Transfer history, session logs, or usage frequency.</li>
+<li>Device identifiers (IMEI, GAID, Android ID, or serial number).</li>
+<li>IP addresses or MAC addresses (these remain on-device and are never transmitted to the Developer).</li>
+<li>Crash reports or diagnostic logs transmitted to any server.</li>
+<li>Advertising identifiers or behavioral profiles.</li>
+<li>Contact lists, call logs, or messaging data.</li>
+<li>Microphone, video, or ambient audio recordings.</li>
+</ul>
+
+<h2>5. Local Data Storage</h2>
+<p>The Application may store the following data <strong>locally on your device only:</strong></p>
+<ul>
+<li><strong>Received files:</strong> Saved to your chosen destination folder on device storage. The Developer has no access to these files.</li>
+<li><strong>App preferences:</strong> Settings such as preferred transfer mode, last-used save path, or UI preferences, stored in Android SharedPreferences on your device. Never transmitted externally.</li>
+<li><strong>Temporary socket state:</strong> In-memory session data (pairing codes, socket handles) that is discarded when the transfer session ends or the Application is closed.</li>
+</ul>
+<p>All locally stored data remains under your exclusive control. You may delete it at any time via the Application's settings, your device's app management interface, or by uninstalling the Application.</p>
+
+<h2>6. Network Security and Open Wi-Fi Disclosure</h2>
+<h3>6.1 Encryption Status</h3>
+<p>In its current version, FlashDrop performs transfers over <strong>plain TCP/UDP sockets without end-to-end application-layer encryption.</strong> Transfers rely on the security of the local network environment.</p>
+<h3>6.2 User Responsibility for Network Security</h3>
+<div class="note"><strong>Important:</strong> Transfers over <strong>open, unencrypted, or public Wi-Fi networks</strong> are undertaken entirely at the User's own risk and discretion.</div>
+<p>The Developer explicitly discloses that:</p>
+<ul>
+<li>On open or shared Wi-Fi networks, other devices on the same network segment may theoretically intercept raw socket data using packet capture tools.</li>
+<li>The Developer is <strong>not responsible</strong> for any interception, eavesdropping, unauthorized access, or data capture by third parties operating on the same network.</li>
+<li>Users are strongly advised to perform transfers exclusively over <strong>private, password-protected, and trusted Wi-Fi networks</strong> or via a device-controlled personal hotspot.</li>
+<li>The Developer is <strong>not liable</strong> for any privacy breach, data exposure, or unauthorized access arising from the User's choice to operate the Application on an open or untrusted network.</li>
+</ul>
+
+<h2>7. Third-Party Services</h2>
+<p><strong>The current release of FlashDrop (as of the Effective Date above) incorporates no third-party analytics SDKs, advertising SDKs, remote crash reporting services, or behavioral tracking frameworks.</strong></p>
+<p>The Application does not currently integrate:</p>
+<ul>
+<li>Google Firebase Analytics</li>
+<li>Google AdMob</li>
+<li>Facebook Audience Network</li>
+<li>Crashlytics / Sentry / Bugsnag</li>
+<li>Any other third-party data collection SDK</li>
+</ul>
+
+<h2>8. Future Scalability Clause — Safe Harbor for Future Updates</h2>
+<p>The Developer reserves the right to introduce standard industry-grade third-party tools in future versions of the Application. Such tools may include, but are not limited to:</p>
+<ul>
+<li><strong>Google AdMob</strong> for in-app advertising.</li>
+<li><strong>Firebase Crashlytics</strong> for anonymous crash diagnostics (non-PII, device-level signals only).</li>
+<li><strong>Firebase Analytics</strong> for aggregate, anonymized usage telemetry to improve Application quality.</li>
+</ul>
+<p><strong>If and when such integrations are introduced:</strong></p>
+<ul>
+<li>This Privacy Policy will be updated <strong>prior to the release</strong> of any such version.</li>
+<li>Users will be notified of the updated policy through standard in-app notification or Play Store release notes.</li>
+<li>Any such tools will be implemented in compliance with applicable data protection regulations, Google Play policies, and the respective SDK's data processing terms.</li>
+<li>Users in applicable jurisdictions will be provided with appropriate consent mechanisms.</li>
+</ul>
+<p><strong>Until such an update is published, no data collection, advertising, or analytics of any kind occurs through the Application.</strong></p>
+
+<h2>9. Children's Privacy</h2>
+<p>The Application is not directed at children under the age of 13 (or such applicable age of digital consent in your jurisdiction). The Developer does not knowingly collect personal information from children. As the Application collects no personal information from any user, no special measures for children's data are currently required. If you believe a child has somehow provided personal information in connection with the Application, please contact us immediately.</p>
+
+<h2>10. Data Retention</h2>
+<p>As the Developer collects no personal data, there is no personal data to retain, delete, or process. All data processed by the Application remains on your device and is subject to your own device's retention policies and your personal choices regarding deletion.</p>
+
+<h2>11. Your Rights</h2>
+<p>Depending on your jurisdiction, you may have the following rights with respect to personal data. As no personal data is collected by the Developer, these rights are satisfied by design (Privacy by Design):</p>
+<ul>
+<li><strong>Right to Access:</strong> No personal data is held by the Developer to provide.</li>
+<li><strong>Right to Erasure:</strong> Uninstalling the Application removes all Application-generated local data from your device.</li>
+<li><strong>Right to Portability:</strong> No data is stored externally to port.</li>
+<li><strong>Right to Object:</strong> No data processing for profiling or marketing occurs.</li>
+</ul>
+<p>For formal data rights inquiries, contact us at the address below. We will respond within a reasonable timeframe.</p>
+
+<h2>12. Security</h2>
+<p>While the Developer makes reasonable efforts to ensure the Application's software integrity (e.g., secure coding practices, dependency hygiene), <strong>no method of electronic storage or local transmission is 100% secure.</strong> The Developer cannot guarantee absolute security of data on your device or in transit over local networks, and expressly disclaims liability for breaches arising from factors outside the Developer's direct control, including but not limited to:</p>
+<ul>
+<li>Operating system vulnerabilities on your device.</li>
+<li>Compromised local network infrastructure.</li>
+<li>Physical access to your device by unauthorized persons.</li>
+</ul>
+
+<h2>13. Changes to This Privacy Policy</h2>
+<p>The Developer reserves the right to update this Privacy Policy at any time. Material changes will be reflected by updating the "Last Updated" date at the top of this document and, where practicable, through an in-app notification. <strong>Your continued use of the Application following the effective date of any updated Privacy Policy constitutes acceptance of the revised policy.</strong></p>
+
+<h2>14. Contact Information</h2>
+<p>For privacy-related inquiries, data rights requests, or concerns about this Privacy Policy, please contact:</p>
+<p><strong>Developer:</strong> Brijesh (FlashDrop Project)<br><strong>Location / Jurisdiction:</strong> Lucknow, Uttar Pradesh, India<br><strong>Support Email:</strong> <a href="mailto:gyancom360@gmail.com">gyancom360@gmail.com</a></p>
+<p>We aim to respond to all legitimate privacy inquiries within <strong>30 business days.</strong></p>
+<hr>
+<p class="foot">© 2026 FlashDrop Project — Brijesh. All rights reserved. This Privacy Policy was last reviewed and updated on September 25, 2026.</p>
+</article>
+
+<!-- ================= TERMS ================= -->
+<article id="terms" aria-labelledby="t-terms">
+<h1 id="t-terms">Terms of Service</h1>
+<p class="lead">Effective and last updated September 25, 2026 · Developer: Brijesh (FlashDrop Project) · <a href="mailto:gyancom360@gmail.com">gyancom360@gmail.com</a></p>
+
+<h2>1. Agreement to Terms</h2>
+<p>By downloading, installing, launching, or using FlashDrop (the "Application"), you ("User") unconditionally agree to be bound by these Terms of Service ("Terms"). If you do not agree with any part of these Terms, <strong>you must immediately cease use of the Application and uninstall it from your device.</strong></p>
+<p>These Terms constitute a legally binding agreement between you and the developer of FlashDrop ("Developer," "we," "us," or "our"). The Developer reserves all rights not expressly granted herein.</p>
+
+<h2>2. Nature of the Application</h2>
+<p>FlashDrop is an <strong>experimental, offline peer-to-peer (P2P) local networking and high-speed file transfer utility</strong> designed to operate exclusively over local area networks (LAN), Wi-Fi Direct, device hotspots, and similar proximity-based wireless environments. The Application:</p>
+<ul>
+<li>Operates <strong>entirely locally</strong> without routing any data through external servers or cloud infrastructure.</li>
+<li>Is offered as a <strong>utility tool</strong> for personal and non-commercial file transfers.</li>
+<li>Employs experimental technologies including zero-copy DMA streaming, Turbo channels, and Web sharing interfaces — features that are inherently developmental in nature.</li>
+<li>Is <strong>provided "AS-IS" and "AS-AVAILABLE"</strong> at all times, with no guaranteed uptime, completion rate, or error-free performance.</li>
+</ul>
+<p>The Application is provided as a utility tool for local network file transfers. While the Developer continuously refines and updates the software, all transfers depend on local device hardware and network conditions, and the Application is provided on an 'AS-IS' and 'AS-AVAILABLE' basis without guarantees of uninterrupted operation.</p>
+
+<h2>3. Disclaimer of Warranties</h2>
+<p class="caps"><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APPLICATION IS PROVIDED STRICTLY "AS-IS" AND "AS-AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE.</strong></p>
+<p>The Developer explicitly disclaims all warranties including, but not limited to:</p>
+<ul>
+<li><strong>No Warranty of Performance:</strong> The Developer makes no representation that transfers will complete, that transfer speeds will meet any benchmark, or that the Application will operate without errors, interruptions, or crashes.</li>
+<li><strong>No Warranty of Fitness:</strong> The Application is not warranted to be fit for any specific purpose, commercial use, or critical data migration scenario.</li>
+<li><strong>No Warranty of Merchantability:</strong> No implied warranty of merchantability is offered or applicable.</li>
+<li><strong>No Warranty of Non-Infringement:</strong> The Developer does not warrant that the Application is free from third-party intellectual property conflicts arising from User-transmitted content.</li>
+<li><strong>No Warranty Against Data Loss:</strong> The Developer expressly disclaims any guarantee against file corruption, incomplete transfers, data loss, or metadata stripping during transmission.</li>
+<li><strong>No Warranty of Hardware Compatibility:</strong> The Developer does not warrant compatibility with any specific device, Android version, Wi-Fi chipset, USB controller, Bluetooth adapter, or operating system build.</li>
+</ul>
+<p>Some jurisdictions do not allow the exclusion of implied warranties. In such jurisdictions, the above exclusions apply to the fullest extent permitted by law.</p>
+
+<h2>4. Limitation of Liability</h2>
+<p class="caps"><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER SHALL NOT BE LIABLE — UNDER ANY LEGAL THEORY, INCLUDING BUT NOT LIMITED TO CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, OR STATUTORY CLAIM — FOR ANY LOSS OR DAMAGE OF ANY KIND, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE, ARISING OUT OF OR IN ANY WAY RELATED TO YOUR USE OF OR INABILITY TO USE THE APPLICATION.</strong></p>
+<p>Without limiting the foregoing, the Developer shall bear <strong>zero liability</strong> for:</p>
+<h3>4.1 Data and File Integrity</h3>
+<ul>
+<li>Loss, corruption, fragmentation, or incomplete transfer of any file — regardless of file type, size, or value.</li>
+<li>Metadata loss (EXIF data, timestamps, geolocation tags, document properties).</li>
+<li>File system errors triggered or revealed during read/write operations initiated by the Application.</li>
+</ul>
+<h3>4.2 Hardware and Device Effects</h3>
+<ul>
+<li>Device overheating resulting from sustained high-throughput wireless operations.</li>
+<li>Accelerated battery drain caused by sustained Wi-Fi or hotspot activity.</li>
+<li>Wi-Fi chipset performance degradation, driver conflicts, or antenna saturation.</li>
+<li>Network interface card (NIC) stress or shortened lifespan attributable to usage patterns.</li>
+<li>USB controller throttling or thermal rollback during wired-assisted transfers.</li>
+</ul>
+<h3>4.3 Network and Connectivity Issues</h3>
+<ul>
+<li>Dropped connections, transfer timeouts, socket errors, or port conflicts arising from the local network environment.</li>
+<li>Interference from third-party devices, routers, access points, or network equipment.</li>
+<li>Performance limitations attributable to ISP throttling, router firmware, or channel congestion.</li>
+</ul>
+<h3>4.4 Actions of Third Parties</h3>
+<ul>
+<li>Any actions performed by other devices or users connected to the same local network, hotspot, or Wi-Fi Direct session.</li>
+<li>Unauthorized connections by unknown third-party devices on open or shared Wi-Fi networks.</li>
+<li>Conduct of receiving peers that contravenes these Terms or applicable law.</li>
+</ul>
+<h3>4.5 Feature Availability</h3>
+<ul>
+<li>Unavailability or degraded performance of any specific feature, including Turbo Transfer channels, Web sharing, QR pairing, or socket streaming modes.</li>
+<li>Loss of pairing codes, session tokens, or temporary network credentials.</li>
+</ul>
+<p class="caps"><strong>IN NO EVENT SHALL THE DEVELOPER'S AGGREGATE LIABILITY TO YOU EXCEED THE AMOUNT YOU PAID FOR THE APPLICATION IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR, IF THE APPLICATION WAS OBTAINED FREE OF CHARGE, THE AGGREGATE LIABILITY SHALL NOT EXCEED THE EQUIVALENT OF ONE US DOLLAR (USD $1.00).</strong></p>
+
+<h2>5. User Responsibilities</h2>
+<p>You acknowledge and agree that you bear <strong>sole and complete responsibility</strong> for:</p>
+<h3>5.1 Pre-Transfer Verification</h3>
+<ul>
+<li>Creating independent backups of all critical, irreplaceable, or sensitive files before initiating any transfer through the Application.</li>
+<li>Verifying the integrity, completeness, and accuracy of all received files after each transfer session.</li>
+<li>Running independent checksum or hash verification on received files when file integrity is critical.</li>
+</ul>
+<h3>5.2 Content Responsibility</h3>
+<ul>
+<li>You are entirely and exclusively responsible for the content you send, receive, or make available through FlashDrop.</li>
+<li>The Developer does <strong>not</strong> inspect, monitor, intercept, log, or exercise any control over data transmitted through the Application.</li>
+<li>You represent and warrant that you will not use the Application to transmit, share, or receive:
+<ul>
+<li>Content that infringes any third-party intellectual property, copyright, trademark, or trade secret rights.</li>
+<li>Malware, ransomware, spyware, trojans, or any malicious executable content.</li>
+<li>Content that is illegal, defamatory, obscene, or prohibited under applicable local, national, or international law.</li>
+<li>Content that constitutes harassment, threats, or unlawful surveillance of any person.</li>
+</ul></li>
+<li>Any legal, civil, or criminal liability arising from the content you transmit or receive is <strong>solely your personal liability</strong>. The Developer assumes no responsibility therefor.</li>
+</ul>
+<h3>5.3 Network Environment</h3>
+<ul>
+<li>You are responsible for the security and configuration of your own network environment, including hotspot password strength, firewall settings, and connected-device management.</li>
+<li>You acknowledge that use of the Application on open, unencrypted, or public Wi-Fi networks is undertaken <strong>entirely at your own risk.</strong></li>
+</ul>
+<h3>5.4 Device Readiness</h3>
+<ul>
+<li>Ensuring your device has adequate storage, battery, and thermal headroom before initiating large file transfers.</li>
+<li>Keeping your device's operating system and security patches reasonably up to date.</li>
+</ul>
+
+<h2>6. Prohibited Uses</h2>
+<p>You agree <strong>not</strong> to use the Application, directly or indirectly, to:</p>
+<ol>
+<li>Transmit files containing malware, viruses, or other malicious code.</li>
+<li>Violate any applicable local, state, national, or international law or regulation.</li>
+<li>Infringe upon the intellectual property, privacy, or proprietary rights of any person or entity.</li>
+<li>Harass, threaten, stalk, or harm any individual.</li>
+<li>Circumvent, disable, or interfere with any security or access control features of the Application.</li>
+<li>Reverse-engineer, decompile, or disassemble the Application except where expressly permitted by law.</li>
+<li>Use the Application as a component of any commercial product or service without express written authorization from the Developer.</li>
+<li>Exploit the Application to gain unauthorized access to systems, devices, or networks of third parties.</li>
+</ol>
+<p>Violation of these prohibitions may result in termination of your right to use the Application and may expose you to civil and criminal liability.</p>
+
+<h2>7. Modifications to the Application and Terms</h2>
+<p>The Developer reserves the <strong>unrestricted right</strong>, at any time and without prior notice or liability to you, to:</p>
+<ul>
+<li>Modify, patch, update, or alter any feature, function, interface, or behavior of the Application, including Turbo channels, Web sharing, socket modes, or QR pairing mechanisms.</li>
+<li>Suspend, restrict, or permanently discontinue the Application or any specific feature thereof.</li>
+<li>Amend, revise, or replace these Terms at any time by posting updated Terms within the Application or on associated repositories and web properties.</li>
+</ul>
+<p><strong>Your continued use of the Application following any modification to the Terms constitutes your irrevocable acceptance of the revised Terms.</strong> It is your responsibility to periodically review these Terms for updates.</p>
+
+<h2>8. Intellectual Property</h2>
+<p>All software code, interface design, graphics, documentation, and associated materials constituting the Application are the exclusive intellectual property of the Developer and are protected under applicable copyright, patent, and trade secret laws.</p>
+<p>These Terms do not convey to you any ownership right, title, or interest in the Application. You are granted a <strong>limited, non-exclusive, non-transferable, revocable license</strong> to install and use the Application on devices you own or control, solely for personal, non-commercial purposes, subject to these Terms.</p>
+
+<h2>9. Open-Source Components</h2>
+<p>The Application may incorporate open-source software components subject to their own respective licenses. Use of such components is governed by the applicable open-source licenses. The inclusion of open-source components does not grant you any rights to the Developer's proprietary code or affect the disclaimers and liability limitations set forth herein.</p>
+
+<h2>10. Indemnification</h2>
+<p>You agree to <strong>indemnify, defend, and hold harmless</strong> the Developer and any associated contributors, collaborators, or service providers from and against any and all claims, demands, actions, damages, losses, costs, expenses (including reasonable legal fees), and liabilities of any kind arising out of or related to:</p>
+<ul>
+<li>Your use or misuse of the Application.</li>
+<li>Content you transmit, receive, or store through the Application.</li>
+<li>Your violation of these Terms.</li>
+<li>Your violation of any applicable law or regulation.</li>
+<li>Your infringement of any third-party right.</li>
+</ul>
+
+<h2>11. Governing Law and Dispute Resolution</h2>
+<p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict-of-law principles. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts located in Lucknow, Uttar Pradesh, India.</p>
+<p>You waive any objection to the exercise of jurisdiction over you by such courts and to venue in such courts.</p>
+
+<h2>12. Severability</h2>
+<p>If any provision of these Terms is found by a court of competent jurisdiction to be unlawful, void, or unenforceable, such provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining provisions shall continue in full force and effect.</p>
+
+<h2>13. Entire Agreement</h2>
+<p>These Terms, together with the Privacy Policy incorporated herein by reference, constitute the <strong>entire agreement</strong> between you and the Developer with respect to the Application and supersede all prior negotiations, understandings, or agreements relating to the subject matter hereof.</p>
+
+<h2>14. Contact Information</h2>
+<p>For questions, legal notices, or concerns regarding these Terms, please contact:</p>
+<p><strong>Developer:</strong> Brijesh (FlashDrop Project)<br><strong>Location / Jurisdiction:</strong> Lucknow, Uttar Pradesh, India<br><strong>Support Email:</strong> <a href="mailto:gyancom360@gmail.com">gyancom360@gmail.com</a></p>
+<hr>
+<p class="foot">© 2026 FlashDrop Project — Brijesh. All rights reserved. These Terms were last reviewed and updated on September 25, 2026.</p>
+</article>
+
+</main>
+
+<nav aria-label="Legal documents"><div class="in" role="tablist">
+<button role="tab" id="tab-privacy" data-target="privacy" aria-selected="true" aria-controls="privacy">Privacy Policy</button>
+<button role="tab" id="tab-terms" data-target="terms" aria-selected="false" aria-controls="terms">Terms of Service</button>
+</div></nav>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('nav button');
+  var docs={privacy:document.getElementById('privacy'),terms:document.getElementById('terms')};
+  var titles={privacy:'Privacy Policy',terms:'Terms of Service'};
+  function show(k,push){
+    if(!docs[k])k='privacy';
+    for(var d in docs)docs[d].classList.toggle('active',d===k);
+    tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.target===k)});
+    document.title='FlashDrop — '+titles[k];
+    if(push)history.replaceState(null,'','#'+k);
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.target,true)})});
+  window.addEventListener('hashchange',function(){show(location.hash.slice(1),false)});
+  show(location.hash.slice(1),false);
+})();
+</script>
+</body>
+</html>
